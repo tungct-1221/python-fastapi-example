@@ -1,6 +1,6 @@
 {
     // https://containers.dev/implementors/json_reference/#general-properties
-    "name": "Dev Container Fast API Example",
+    "name": "Fast API Example",
     // Minimum host requirements
     // https://containers.dev/implementors/json_reference/#min-host-reqs
     "hostRequirements": {
@@ -15,7 +15,11 @@
     // https://containers.dev/implementors/json_reference/#compose-specific
     "service": "devcontainer",
     "dockerComposeFile": "docker-compose.yml",
-    // "runArgs": [ "-v", "/var/run/docker.sock:/var/run/docker.sock"],
+    "features": {
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+            "version": "latest"
+        }
+    },
     "customizations": { 
         "vscode": {
             "settings": {
