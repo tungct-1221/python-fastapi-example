@@ -18,12 +18,14 @@
     "features": {
         "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
             "version": "latest"
-        }
+        },
+        "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {},
+        "ghcr.io/devcontainers-contrib/features/fzf:1": {}
     },
     "customizations": { 
         "vscode": {
             "settings": {
-                "terminal.integrated.shell.linux": "/bin/bash"
+                "terminal.integrated.shell.linux": "/bin/zsh"
             },
             "extensions": [
                 "ms-python.debugpy",
