@@ -1,0 +1,42 @@
+{
+    // https://containers.dev/implementors/json_reference/#general-properties
+    "name": "Dev Container Fast API Example",
+    // Minimum host requirements
+    // https://containers.dev/implementors/json_reference/#min-host-reqs
+    "hostRequirements": {
+        "cpus": 2,
+        "memory": "4gb",
+        "storage": "32gb"
+    },
+    
+    "workspaceFolder": "/workspace",
+
+    // Configure by Docker compose
+    // https://containers.dev/implementors/json_reference/#compose-specific
+    // "service": "devcontainer",
+    // "dockerComposeFile": "docker-compose.yml",
+
+    // Configure by DockerFile
+    // https://containers.dev/implementors/json_reference/#image-specific
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+
+    },
+    // "runArgs": [ "-u", "appuser" ],
+    "customizations": { 
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+            "extensions": [
+                "ms-python.debugpy",
+                "ms-python.python",
+                "visualstudioexptteam.vscodeintellicode",
+                "njpwerner.autodocstring",
+                "donjayamanne.python-environment-manager",
+                "streetsidesoftware.code-spell-checker"
+            ]
+        }
+    }
+}

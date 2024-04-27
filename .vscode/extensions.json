@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "ms-python.debugpy",
+        "ms-python.python",
+        "visualstudioexptteam.vscodeintellicode",
+        "njpwerner.autodocstring",
+        "donjayamanne.python-environment-manager",
+        "streetsidesoftware.code-spell-checker"
+    ]
+}
