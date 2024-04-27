@@ -13,17 +13,9 @@
 
     // Configure by Docker compose
     // https://containers.dev/implementors/json_reference/#compose-specific
-    // "service": "devcontainer",
-    // "dockerComposeFile": "docker-compose.yml",
-
-    // Configure by DockerFile
-    // https://containers.dev/implementors/json_reference/#image-specific
-    "build": {
-        "dockerfile": "Dockerfile",
-        "context": ".."
-
-    },
-    // "runArgs": [ "-u", "appuser" ],
+    "service": "devcontainer",
+    "dockerComposeFile": "docker-compose.yml",
+    // "runArgs": [ "-v", "/var/run/docker.sock:/var/run/docker.sock"],
     "customizations": { 
         "vscode": {
             "settings": {
@@ -35,7 +27,8 @@
                 "visualstudioexptteam.vscodeintellicode",
                 "njpwerner.autodocstring",
                 "donjayamanne.python-environment-manager",
-                "streetsidesoftware.code-spell-checker"
+                "streetsidesoftware.code-spell-checker",
+                "ms-azuretools.vscode-docker"
             ]
         }
     }
