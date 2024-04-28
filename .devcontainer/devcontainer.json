@@ -1,47 +1,49 @@
 {
-    // https://containers.dev/implementors/json_reference/#general-properties
-    "name": "Fast API Example",
-    // Minimum host requirements
-    // https://containers.dev/implementors/json_reference/#min-host-reqs
-    "hostRequirements": {
-        "cpus": 2,
-        "memory": "4gb",
-        "storage": "32gb"
-    },
+  // https://containers.dev/implementors/json_reference/#general-properties
+  "name": "Fast API Example",
+  // Minimum host requirements
+  // https://containers.dev/implementors/json_reference/#min-host-reqs
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "4gb",
+    "storage": "32gb"
+  },
 
-    "workspaceFolder": "/workspace",
+  "workspaceFolder": "/workspace",
 
-    // Configure by Docker compose
-    // https://containers.dev/implementors/json_reference/#compose-specific
-    "service": "devcontainer",
-    "dockerComposeFile": "docker-compose.yml",
-    "features": {
-        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
-            "version": "latest"
-        }
-    },
-    // "remoteUser": "worker",
-    "mounts": [
-        "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
-    ],
-    "postCreateCommand": {
-        "python_venv": "python -m venv .venv"
-    },
-    "customizations": { 
-        "vscode": {
-            "settings": {
-                "terminal.integrated.shell.linux": "/usr/bin/zsh",
-                "terminal.integrated.inheritEnv": true
-            },
-            "extensions": [
-                "ms-python.debugpy",
-                "ms-python.python",
-                "visualstudioexptteam.vscodeintellicode",
-                "njpwerner.autodocstring",
-                "donjayamanne.python-environment-manager",
-                "streetsidesoftware.code-spell-checker",
-                "ms-azuretools.vscode-docker"
-            ]
-        }
+  // Configure by Docker compose
+  // https://containers.dev/implementors/json_reference/#compose-specific
+  "service": "devcontainer",
+  "dockerComposeFile": "docker-compose.yml",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "version": "latest"
     }
+  },
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+  ],
+  "postCreateCommand": {
+    "python_venv": "python -m venv .venv"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/usr/bin/zsh",
+        "terminal.integrated.inheritEnv": true
+      },
+      "extensions": [
+        "ms-python.debugpy",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "visualstudioexptteam.vscodeintellicode",
+        "njpwerner.autodocstring",
+        "donjayamanne.python-environment-manager",
+        "streetsidesoftware.code-spell-checker",
+        "ms-azuretools.vscode-docker",
+        "esbenp.prettier-vscode",
+        "ms-python.black-formatter"
+      ]
+    }
+  }
 }
