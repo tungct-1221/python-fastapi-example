@@ -8,7 +8,7 @@
         "memory": "4gb",
         "storage": "32gb"
     },
-    
+
     "workspaceFolder": "/workspace",
 
     // Configure by Docker compose
@@ -18,14 +18,20 @@
     "features": {
         "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
             "version": "latest"
-        },
-        "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {},
-        "ghcr.io/devcontainers-contrib/features/fzf:1": {}
+        }
+    },
+    // "remoteUser": "worker",
+    "mounts": [
+        "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+    ],
+    "postCreateCommand": {
+        "python_venv": "python -m venv .venv"
     },
     "customizations": { 
         "vscode": {
             "settings": {
-                "terminal.integrated.shell.linux": "/bin/zsh"
+                "terminal.integrated.shell.linux": "/usr/bin/zsh",
+                "terminal.integrated.inheritEnv": true
             },
             "extensions": [
                 "ms-python.debugpy",
