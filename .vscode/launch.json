@@ -5,15 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python Debugger: FastAPI",
-            "type": "debugpy",
-            "request": "launch",
-            "module": "uvicorn",
-            "args": [
-                "src.main:app",
-                "--reload"
-            ],
-            "jinja": true
+          "name": "Python Debugger: FastAPI",
+          "type": "debugpy",
+          "request": "launch",
+          "module": "uvicorn",
+          "args": ["main:app", "--reload"],
+          "jinja": true,
+          "cwd": "${workspaceFolder}/src"
         },
         {
             "name": "Docker: Python - FastAPI",
